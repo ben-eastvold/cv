@@ -108,24 +108,20 @@ h5 {
                   CV
 ************************************************/
 
-.paper-background {
-  background-color: white;
-  max-width: 1000px;
-  margin: 20px auto;
-  padding: 20px;
-}
+/*  DISPLAY  */
 
 #info, main {
+  max-width: 1000px;
   padding: 0 20px;
-}
-
-#info {
-  margin: 30px 0;
-}
-
-main {
+ }
+ 
+ #info {
+  margin: 30px auto;
+ }
+ 
+ main {
   margin: 0 auto;
-}
+ }
 
 #info h1 {
   margin: 0;
@@ -135,27 +131,31 @@ main {
   margin: 0;
 }
 
-/*  DISPLAY  */
+@media screen and (max-width: 800px) {
+  #info {
+    display: block;
+  }
 
-@media screen and (max-width: 799px) {
   #info .left {
     text-align: center;
   }
 
   #info .right {
-    text-align: center;
     margin-top: 20px;
+    text-align: center;
   }
 
   section .right {
     margin: 20px;
   }
 
-  section h3 {
+  /* Make H3 bolder to identify more clearly when they are stacked */
+  h3 {
     font-weight: bold;
   }
 }
-@media screen and (min-width: 800px) {
+
+@media screen and (min-width: 801px) {
   #info {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -163,12 +163,16 @@ main {
   
   #info .right {
     align-self: end;
-    text-align: right;
+    text-align: end;
   }
-  
+
   section {
     display: grid;
     grid-template-columns: 200px 1fr;
+  }
+  
+  section .left {
+    align-self: start;
   }
 }
 
@@ -178,8 +182,9 @@ main {
 }
 
 .work-item p {
-  grid-area: 2 / 1 / 3 / 3;
+  grid-area: 2 / 1 / 2 / 3;
 }
+
 /***********************************************
                   PROJECTS
 ************************************************/
